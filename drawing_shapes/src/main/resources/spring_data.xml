@@ -20,10 +20,12 @@
    		<property name="x" value="1"></property>
    		<property name="y" value="1"></property>
    </bean>
+   
    <bean id="pointB_bean_id" class="com.shivam.drawing_shapes.Point">
    		<property name="x" value="-1"></property>
    		<property name="y" value="-1"></property>
    </bean>
+   
    <bean id="pointC_bean_id" class="com.shivam.drawing_shapes.Point">
    		<property name="x" value="0"></property>
    		<property name="y" value="0"></property>
