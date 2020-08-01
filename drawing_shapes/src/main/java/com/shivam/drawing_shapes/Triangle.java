@@ -35,7 +35,7 @@ public class Triangle implements Shape {
 
 
 	public void draw() {
-		System.out.println("Drawing shape Triangle");
+		System.out.println("Drawing shape Triangle, points are "+pointA+", "+pointB+", "+pointC);
 	}
 	
 }
