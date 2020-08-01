@@ -11,9 +11,13 @@
    
    
    <bean id="triangle_bean_id" class="com.shivam.drawing_shapes.Triangle"> 
-   		<property name="pointA" ref="pointA_bean_id"></property>
-   		<property name="pointB" ref="pointB_bean_id"></property>
-   		<property name="pointC" ref="pointC_bean_id"></property>
+   		<property name="points">
+   			<list>
+   				<ref bean="pointA_bean_id"></ref>
+   				<ref bean="pointB_bean_id"></ref>
+   				<ref bean="pointC_bean_id"></ref>
+   			</list>
+   		</property>
    </bean>
    
    <bean id="pointA_bean_id" class="com.shivam.drawing_shapes.Point">
