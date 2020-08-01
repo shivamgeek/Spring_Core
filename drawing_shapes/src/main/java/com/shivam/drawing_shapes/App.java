@@ -11,7 +11,7 @@ public class App
         System.out.println( "Hello World!" );
         
         ApplicationContext context = new ClassPathXmlApplicationContext("spring_data.xml");
-        Shape s = (Shape)context.getBean("triangle_bean_id");
+        Shape s = (Shape)context.getBean("triangle_alias");
         s.draw();
     }
 }

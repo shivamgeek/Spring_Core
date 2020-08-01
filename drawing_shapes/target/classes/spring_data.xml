@@ -31,5 +31,6 @@
    		<property name="y" value="0"></property>
    </bean>
    
+   <alias name="triangle_bean_id" alias="triangle_alias"></alias>
    
 </beans>
