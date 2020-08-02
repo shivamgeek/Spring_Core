@@ -13,7 +13,7 @@ public class App
         
         AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring_data.xml");
         context.registerShutdownHook();
-        Shape s = (Shape)context.getBean("triangle_alias");
+        Shape s = (Shape)context.getBean("circle_bean_id");
         s.draw();
     }
 }

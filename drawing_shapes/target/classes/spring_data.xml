@@ -9,21 +9,16 @@
    http://www.springframework.org/schema/context
    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
    
-   
-   
-   
-  <bean id="parent_triangle_id" class="com.shivam.drawing_shapes.Triangle">
-  	
-  </bean>
-   
-   
+
    <bean id="triangle_bean_id" class="com.shivam.drawing_shapes.Triangle" init-method="myInit" destroy-method="myDestroy">
    		<property name="pointA_variable" ref="pointA_bean_id"></property> 
    		<property name="pointB_variable" ref="pointB_bean_id"></property>
    		<property name="pointC_variable" ref="pointC_bean_id"></property>
    </bean>
   
-
+	<bean id="circle_bean_id" class="com.shivam.drawing_shapes.Circle">
+		<property name="center" ref="pointA_bean_id"></property>
+	</bean>
   
   
    <!--  VARIABLE NAMES AND BEAN ID SHOULD MATCH, FOR AUTOWIRE TO WORK --> 
