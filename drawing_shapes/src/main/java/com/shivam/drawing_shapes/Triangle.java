@@ -1,6 +1,7 @@
 package com.shivam.drawing_shapes;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -8,7 +9,20 @@ public class Triangle implements Shape {
 
 	@Autowired
 	private Point pointA_variable, pointB_variable, pointC_variable; 
+
+	@Autowired
+	private MessageSource messageSource;
 	
+	public MessageSource getMessageSource() {
+		return messageSource;
+	}
+
+
+	public void setMessageSource(MessageSource messageSource) {
+		this.messageSource = messageSource;
+	}
+
+
 	public Point getPointA_variable() {
 		return pointA_variable;
 	}
@@ -37,6 +51,7 @@ public class Triangle implements Shape {
 
 	public void draw() {
 		System.out.println("Drawing shape Triangle, points are "+pointA_variable+", "+pointB_variable+", "+pointC_variable);
+		System.out.println("Triangle Message is -> "+messageSource.getMessage("abc_msg", null,"\"MESSAGE NOT FOUND\"",null));
 	}
 
 

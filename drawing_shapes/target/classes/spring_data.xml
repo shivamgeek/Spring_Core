@@ -48,6 +48,13 @@
    		<property name="y" value="0"></property>
    </bean>
    
-   <alias name="triangle_bean_id" alias="triangle_alias"></alias>
+   <bean name="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+   		<property name="basenames">
+   			<list>
+   				<value>myMessages</value>
+   			</list>
+   		</property> 
+   </bean>
+   
    
 </beans>
