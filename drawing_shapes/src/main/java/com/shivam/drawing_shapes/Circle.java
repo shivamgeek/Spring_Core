@@ -1,7 +1,10 @@
 package com.shivam.drawing_shapes;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Circle implements Shape {
 	
+	@Autowired
 	private Point center;
 	
 	public Point getCenter() {
