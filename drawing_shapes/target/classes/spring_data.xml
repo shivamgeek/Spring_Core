@@ -10,7 +10,7 @@
    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
    
    
-   <bean id="triangle_bean_id" class="com.shivam.drawing_shapes.Triangle" autowire="byName" > 
+   <bean id="triangle_bean_id" class="com.shivam.drawing_shapes.Triangle" scope="prototype" autowire="byName" > 
 
    </bean>
    
