@@ -3,7 +3,7 @@ package com.shivam.drawing_shapes;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-public class Triangle implements Shape, InitializingBean, DisposableBean {
+public class Triangle implements Shape {
 
 	private Point pointA_variable, pointB_variable, pointC_variable; 
 	
@@ -38,13 +38,13 @@ public class Triangle implements Shape, InitializingBean, DisposableBean {
 	}
 
 
-	public void afterPropertiesSet() throws Exception {
-		System.out.println("InitializingBean init() of Triangle bean called");
+	public void myInit() {
+		System.out.println("init() of Triangle bean called");
 	}
 
 
-	public void destroy() throws Exception {
-		System.out.println("DisposableBeann destroy() of Triangle bean called");
+	public void myDestroy() {
+		System.out.println("destroy() of Triangle bean called");
 	}
 	
 }
