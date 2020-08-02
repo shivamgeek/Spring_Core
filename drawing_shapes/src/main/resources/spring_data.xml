@@ -10,23 +10,33 @@
    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
    
    
-   <bean id="triangle_bean_id" class="com.shivam.drawing_shapes.Triangle" scope="prototype" autowire="byName" > 
-
+   
+   
+  <bean id="parent_triangle_id" class="com.shivam.drawing_shapes.Triangle">
+  	<property name="pointA_variable" ref="pointA_bean_id"></property>
+  </bean>
+   
+   
+   <bean id="triangle_bean_id" class="com.shivam.drawing_shapes.Triangle" parent="parent_triangle_id"> 
+   		<property name="pointB_variable" ref="pointB_bean_id"></property>
+   		<property name="pointC_variable" ref="pointC_bean_id"></property>
    </bean>
-   
-   <!--  VARIABLE NAMES AND BEAN ID SHOULD MATCH, FOR AUTOWIRE TO WORK -->
-   
-   <bean id="pointA_variable" class="com.shivam.drawing_shapes.Point">
+  
+
+  
+  
+   <!--  VARIABLE NAMES AND BEAN ID SHOULD MATCH, FOR AUTOWIRE TO WORK --> 
+   <bean id="pointA_bean_id" class="com.shivam.drawing_shapes.Point">
    		<property name="x" value="1"></property>
    		<property name="y" value="1"></property>
    </bean>
    
-   <bean id="pointB_variable" class="com.shivam.drawing_shapes.Point">
+   <bean id="pointB_bean_id" class="com.shivam.drawing_shapes.Point">
    		<property name="x" value="-1"></property>
    		<property name="y" value="-1"></property>
    </bean>
    
-   <bean id="pointC_variable" class="com.shivam.drawing_shapes.Point">
+   <bean id="pointC_bean_id" class="com.shivam.drawing_shapes.Point">
    		<property name="x" value="0"></property>
    		<property name="y" value="0"></property>
    </bean>
