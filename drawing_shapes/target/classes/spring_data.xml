@@ -9,38 +9,41 @@
    http://www.springframework.org/schema/context
    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
    
-    
+    <!-- TELL SPRING TO USE ANNOTATIONS -->
     <context:annotation-config />
+    
+    <!-- @Component ANNOTATION CAN BE USED TO DECLARE A CLASS AS A BEAN WITHOUT USING XML, 
+  		  BUT WE NEED TO TELL XML TO SCAN THE BASE PACKAGE FOR @Components -->
+    <context:component-scan base-package="com.shivam.drawing_shapes"></context:component-scan>
 
-   <bean id="triangle_bean_id" class="com.shivam.drawing_shapes.Triangle" init-method="myInit" destroy-method="myDestroy">
+
+<!--    <bean id="triangle_bean_id" class="com.shivam.drawing_shapes.Triangle" init-method="myInit" destroy-method="myDestroy">
    		<property name="pointA_variable" ref="pointA_bean_id"></property> 
    		<property name="pointB_variable" ref="pointB_bean_id"></property>
    		<property name="pointC_variable" ref="pointC_bean_id"></property>
-   </bean>
+   </bean> 
   
-	<bean id="circle_bean_id" class="com.shivam.drawing_shapes.Circle">
-		
-	</bean>
+	<bean id="circle_bean_id" class="com.shivam.drawing_shapes.Circle"> </bean>
+  -->
   
-  
-   <!--  VARIABLE NAMES AND BEAN ID SHOULD MATCH, FOR AUTOWIRE TO WORK --> 
+   <!--  VARIABLE NAMES AND BEAN ID SHOULD MATCH, FOR @Autowire TO WORK --> 
    
    <bean id="center" class="com.shivam.drawing_shapes.Point">
    		<property name="x" value="1"></property>
    		<property name="y" value="1"></property>
    </bean>
    
-   <bean id="pointA_bean_id" class="com.shivam.drawing_shapes.Point">
+   <bean id="pointA_variable" class="com.shivam.drawing_shapes.Point">
    		<property name="x" value="1"></property>
    		<property name="y" value="1"></property>
    </bean>
    
-   <bean id="pointB_bean_id" class="com.shivam.drawing_shapes.Point">
+   <bean id="pointB_variable" class="com.shivam.drawing_shapes.Point">
    		<property name="x" value="-1"></property>
    		<property name="y" value="-1"></property>
    </bean>
    
-   <bean id="pointC_bean_id" class="com.shivam.drawing_shapes.Point">
+   <bean id="pointC_variable" class="com.shivam.drawing_shapes.Point">
    		<property name="x" value="0"></property>
    		<property name="y" value="0"></property>
    </bean>

@@ -1,10 +1,12 @@
 package com.shivam.drawing_shapes;
 
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Triangle implements Shape {
 
+	@Autowired
 	private Point pointA_variable, pointB_variable, pointC_variable; 
 	
 	public Point getPointA_variable() {
