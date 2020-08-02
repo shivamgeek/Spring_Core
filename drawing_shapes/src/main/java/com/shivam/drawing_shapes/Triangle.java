@@ -1,9 +1,12 @@
 package com.shivam.drawing_shapes;
 
-public class Triangle implements Shape {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Triangle implements Shape, InitializingBean, DisposableBean {
 
 	private Point pointA_variable, pointB_variable, pointC_variable; 
-
+	
 	public Point getPointA_variable() {
 		return pointA_variable;
 	}
@@ -32,6 +35,16 @@ public class Triangle implements Shape {
 
 	public void draw() {
 		System.out.println("Drawing shape Triangle, points are "+pointA_variable+", "+pointB_variable+", "+pointC_variable);
+	}
+
+
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("InitializingBean init() of Triangle bean called");
+	}
+
+
+	public void destroy() throws Exception {
+		System.out.println("DisposableBeann destroy() of Triangle bean called");
 	}
 	
 }
